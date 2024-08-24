@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="home-top">
+        <img src="{% static 'images/dj.svg' %}" alt="DJ hero image" class="hero-image">
+        <div class="home-headings">
+            <h1 class="home-heading">DJ Helper</h1>
+            <h2>Find Songs For Your Next Set</h2>
+        </div>
+    </div>
+    <form id="song-search-form" action="{% url 'results' %}" method="get">
+        <input type="text" id="song-search-input" placeholder="Enter a song and find songs to mix with it...">
+        <input type="hidden" id="track-id" name="track_id">
+        <input type="submit" value="Find">
+    </form>
+    <div class="loading" id="loading-spinner"></div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/script.js' %}" defer></script>
+{% endblock %}

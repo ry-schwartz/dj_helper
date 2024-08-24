@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="results-top">
+        <h1 class="results-heading">Mix Matches</h1>
+        <a href="{% url 'home' %}" class="back-button">Go Back</a>
+    </div>
+    <div class="results-display">
+        {% for recommendation in recommendations %}
+        <div class="results-card">
+            <img src="{{ recommendation.cover_art }}" alt="Song Cover Photo" class="song-cover-photo">
+            <h5>{{ recommendation.artist }}</h5>
+            <h6>{{ recommendation.song }}</h6>
+            <h6>BPM: {{ recommendation.bpm }}</h6>
+            <h6>Key: {{ recommendation.key }}</h6>
+            <h6>Genre: {{ recommendation.genre }}</h6>
+            {% if recommendation.preview_url %}
+            <img src="{% static 'images/sound.svg' %}" alt="Audio Button" class="preview-button" onclick="playPreview('{{ recommendation.preview_url }}')">
+            {% else %}
+            <p>No preview available</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
