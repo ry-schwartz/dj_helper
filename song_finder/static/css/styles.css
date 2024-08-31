@@ -194,3 +194,59 @@ p {
     align-self: center;
     padding: 1em;
 }
+
+/* --- Breakpoints --- */
+@media (max-width: 1150px) {
+    * {
+        font-size: 12px;
+    }
+
+    .song-cover-photo {
+        max-height: 125px;
+    }
+}
+
+@media (max-width: 768px) {
+    * {
+        font-size: 10px;
+    }
+
+    .hero-image {
+        height: 40%;
+    }
+
+    .results-display {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .results-card {
+        width: 60%;
+        margin-bottom: 5%;
+    }
+}
+
+@media (max-width: 550px) {
+    .home-heading {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    form {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    input[type='text'] {
+        width: 80%;
+        margin-bottom: 1em;
+    }
+
+    input[type='submit'] {
+        width: 40%;
+    }
+}
