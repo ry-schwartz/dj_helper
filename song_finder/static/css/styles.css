@@ -7,6 +7,7 @@
     font-family: "Inter", sans-serif;
     font-weight: normal;
     /* border: solid 1px red; */
+    overflow-x: hidden;
 }
 
 
@@ -195,6 +196,18 @@ p {
     padding: 1em;
 }
 
+.spotify-branding-container {
+    margin-top: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.spotify-logo {
+    height: 50px;
+}
+
 /* --- Breakpoints --- */
 @media (max-width: 1150px) {
     * {
@@ -248,5 +261,18 @@ p {
 
     input[type='submit'] {
         width: 40%;
+    }
+
+    .spotify-branding-container {
+        margin-top: 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+    }
+    
+    .spotify-logo {
+        height: 30px;
     }
 }
